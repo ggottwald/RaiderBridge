@@ -46,13 +46,6 @@ class GetAttrTest extends NodeTestCase
         $object->attr = null;
         $actual = GetAttrNode::attribute($twig, $template->getSourceContext(), $object, "attr", [], Template::ANY_CALL);
         $this->assertEquals(null, $actual);
-
-        $actual = GetAttrNode::attribute($twig, $template->getSourceContext(), $object, "exists");
-        $this->assertEquals(false, $actual);
-
-        $object->exists = true;
-        $actual = GetAttrNode::attribute($twig, $template->getSourceContext(), $object, "exists");
-        $this->assertEquals(true, $actual);
     }
 
     public function testGetAttributeOnModelWithSandbox()

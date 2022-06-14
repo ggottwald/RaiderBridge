@@ -1,7 +1,7 @@
 <?php
 
 /**
- * This file is part of the TwigBridge package.
+ * This file is part of the RaiderBridge package.
  *
  * @copyright Robert Crowe <hello@vivalacrowe.com>
  *
@@ -45,8 +45,8 @@ return [
             'charset' => 'utf-8',
 
             // The base template class to use for generated templates.
-            // default: TwigBridge\Twig\Template
-            'base_template_class' => 'TwigBridge\Twig\Template',
+            // default: RaiderBridge\Twig\Template
+            'base_template_class' => 'RaiderBridge\Twig\Template',
 
             // An absolute path where to store the compiled templates, or false to disable caching. If null
             // then the cache file path is used.
@@ -111,24 +111,24 @@ return [
         |
         */
         'enabled' => [
-            'TwigBridge\Extension\Loader\Facades',
-            'TwigBridge\Extension\Loader\Filters',
-            'TwigBridge\Extension\Loader\Functions',
+            'RaiderBridge\Extension\Loader\Facades',
+            'RaiderBridge\Extension\Loader\Filters',
+            'RaiderBridge\Extension\Loader\Functions',
 
-            'TwigBridge\Extension\Laravel\Auth',
-            'TwigBridge\Extension\Laravel\Config',
-            'TwigBridge\Extension\Laravel\Dump',
-            'TwigBridge\Extension\Laravel\Input',
-            'TwigBridge\Extension\Laravel\Session',
-            'TwigBridge\Extension\Laravel\Str',
-            'TwigBridge\Extension\Laravel\Translator',
-            'TwigBridge\Extension\Laravel\Url',
-            'TwigBridge\Extension\Laravel\Model',
-            // 'TwigBridge\Extension\Laravel\Gate',
+            'RaiderBridge\Extension\Laravel\Auth',
+            'RaiderBridge\Extension\Laravel\Config',
+            'RaiderBridge\Extension\Laravel\Dump',
+            'RaiderBridge\Extension\Laravel\Input',
+            'RaiderBridge\Extension\Laravel\Session',
+            'RaiderBridge\Extension\Laravel\Str',
+            'RaiderBridge\Extension\Laravel\Translator',
+            'RaiderBridge\Extension\Laravel\Url',
+            'RaiderBridge\Extension\Laravel\Model',
+            // 'RaiderBridge\Extension\Laravel\Gate',
 
-            // 'TwigBridge\Extension\Laravel\Form',
-            // 'TwigBridge\Extension\Laravel\Html',
-            // 'TwigBridge\Extension\Laravel\Legacy\Facades',
+            // 'RaiderBridge\Extension\Laravel\Form',
+            // 'RaiderBridge\Extension\Laravel\Html',
+            // 'RaiderBridge\Extension\Laravel\Legacy\Facades',
         ],
 
         /*

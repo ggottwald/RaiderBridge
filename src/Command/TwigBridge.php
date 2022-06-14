@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace TwigBridge\Command;
+namespace RaiderBridge\Command;
 
 use Illuminate\Console\Command;
-use Twig\Environment;
-use TwigBridge\Bridge;
+use Raider\Environment;
+use RaiderBridge\Bridge;
 
 /**
  * Artisan command to show details about the TwigBridge package.

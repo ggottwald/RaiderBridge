@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace TwigBridge\Command;
+namespace RaiderBridge\Command;
 
 use Illuminate\Console\Command;
-use Twig_Environment;
+use Raider_Environment;
 use Illuminate\Filesystem\Filesystem;
 
 /**

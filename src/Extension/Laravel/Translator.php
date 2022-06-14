@@ -9,12 +9,12 @@
  * file that was distributed with this source code.
  */
 
-namespace TwigBridge\Extension\Laravel;
+namespace RaiderBridge\Extension\Laravel;
 
 use Illuminate\Contracts\Translation\Translator as LaravelTranslator;
-use Twig\TwigFilter;
-use Twig\TwigFunction;
-use Twig\Extension\AbstractExtension;
+use Raider\TwigFilter;
+use Raider\TwigFunction;
+use Raider\Extension\AbstractExtension;
 
 /**
  * Access Laravels translator class in your Twig templates.

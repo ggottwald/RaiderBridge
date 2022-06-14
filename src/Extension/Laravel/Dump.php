@@ -9,14 +9,14 @@
  * file that was distributed with this source code.
  */
 
-namespace TwigBridge\Extension\Laravel;
+namespace RaiderBridge\Extension\Laravel;
 
 use Symfony\Component\VarDumper\Dumper\HtmlDumper;
 use Symfony\Component\VarDumper\Cloner\VarCloner;
-use Twig\Environment;
-use Twig\Template;
-use Twig\TwigFunction;
-use Twig\Extension\AbstractExtension;
+use Raider\Environment;
+use Raider\Template;
+use Raider\TwigFunction;
+use Raider\Extension\AbstractExtension;
 
 /**
  * Dump a variable or the view context

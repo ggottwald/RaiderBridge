@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace TwigBridge\Extension\Loader\Facade;
+namespace RaiderBridge\Extension\Loader\Facade;
 
-use Twig\Markup;
+use Raider\Markup;
 
 /**
  * Handles calling the method on the called facade.
@@ -86,7 +86,7 @@ class Caller
         }
 
         $result  = forward_static_call_array([$this->facade, $method], $arguments);
-        $is_safe = ($is_safe && (is_string($result) || (is_callable($result) && method_exists($result, '__toString'))));
+        $is_safe = ($is_safe && (is_string($result) || method_exists($result, '__toString')));
 
         return ($is_safe) ? new Markup($result, $this->options['charset']) : $result;
     }

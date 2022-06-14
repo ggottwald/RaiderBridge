@@ -9,14 +9,13 @@
  * file that was distributed with this source code.
  */
 
-namespace TwigBridge\Engine;
+namespace RaiderBridge\Engine;
 
 use ErrorException;
 use Illuminate\View\Engines\CompilerEngine;
-use Twig\Error\LoaderError;
-use Twig\Error\Error;
-use Twig\Loader\LoaderInterface;
-use TwigBridge\Twig\Loader;
+use Raider\Error\LoaderError;
+use Raider\Error\Error;
+use RaiderBridge\Twig\Loader;
 
 /**
  * View engine for Twig files.
@@ -33,18 +32,18 @@ class Twig extends CompilerEngine
     /**
      * Used to find the file that has failed.
      *
-     * @var \TwigBridge\Twig\Loader
+     * @var \RaiderBridge\Twig\Loader
      */
     protected $loader = [];
 
     /**
      * Create a new Twig view engine instance.
      *
-     * @param \TwigBridge\Engine\Compiler        $compiler
-     * @param \TwigBridge\Twig\Loader            $loader
+     * @param \RaiderBridge\Engine\Compiler        $compiler
+     * @param \RaiderBridge\Twig\Loader            $loader
      * @param array                              $globalData
      */
-    public function __construct(Compiler $compiler, LoaderInterface $loader, array $globalData = [])
+    public function __construct(Compiler $compiler, Loader $loader, array $globalData = [])
     {
         parent::__construct($compiler);
 
@@ -120,10 +119,7 @@ class Twig extends CompilerEngine
         } elseif ($templateFile) {
             // Attempt to locate full path to file
             try {
-                if ($this->loader instanceof Loader) {
-                    //Outside of unit test, we should be able to load the file
-                    $file = $this->loader->findTemplate($templateFile);
-                }
+                $file = $this->loader->findTemplate($templateFile);
             } catch (LoaderError $exception) {
                 // Unable to load template
             }

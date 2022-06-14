@@ -9,12 +9,12 @@
  * file that was distributed with this source code.
  */
 
-namespace TwigBridge\Extension\Laravel;
+namespace RaiderBridge\Extension\Laravel;
 
 use Collective\Html\FormBuilder;
 use Illuminate\Support\Str as IlluminateStr;
-use Twig\TwigFunction;
-use Twig\Extension\AbstractExtension;
+use Raider\TwigFunction;
+use Raider\Extension\AbstractExtension;
 
 /**
  * Access Laravels form builder in your Twig templates.

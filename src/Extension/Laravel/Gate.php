@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace TwigBridge\Extension\Laravel;
+namespace RaiderBridge\Extension\Laravel;
 
 use Illuminate\Contracts\Auth\Access\Gate as GateContract;
-use Twig\TwigFunction;
-use Twig\Extension\AbstractExtension;
+use Raider\TwigFunction;
+use Raider\Extension\AbstractExtension;
 
 /**
  * Access Laravels auth class in your Twig templates.

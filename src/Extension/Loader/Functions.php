@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace TwigBridge\Extension\Loader;
+namespace RaiderBridge\Extension\Loader;
 
-use Twig\TwigFunction;
+use Raider\TwigFunction;
 
 /**
  * Extension to expose defined functions to the Twig templates.

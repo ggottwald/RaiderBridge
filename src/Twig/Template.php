@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace TwigBridge\Twig;
+namespace RaiderBridge\Twig;
 
 use Illuminate\View\View;
-use Twig\Template as TwigTemplate;
+use Raider\Template as TwigTemplate;
 
 /**
  * Default base class for compiled templates.

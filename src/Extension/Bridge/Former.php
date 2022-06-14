@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace TwigBridge\Extension\Bridge;
+namespace RaiderBridge\Extension\Bridge;
 
-use Twig\TwigFunction;
-use Twig\Extension\AbstractExtension;
+use Raider\TwigFunction;
+use Raider\Extension\AbstractExtension;
 
 /**
  * Use Former in your Twig templates.

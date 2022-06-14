@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace TwigBridge\Command;
+namespace RaiderBridge\Command;
 
 use Illuminate\Console\Command;
 use InvalidArgumentException;
@@ -17,9 +17,8 @@ use RuntimeException;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Finder\Finder;
-use Twig\Error\Error;
-use Twig\Error\LoaderError;
-use Twig\Source;
+use Raider\Error\Error;
+use Raider\Error\LoaderError;
 
 /**
  * Artisan command to check the syntax of Twig templates.
@@ -42,7 +41,7 @@ class Lint extends Command
     protected $description = 'Lints Twig templates';
 
     /**
-     * @var \TwigBridge\Bridge
+     * @var \RaiderBridge\Bridge
      */
     protected $twig;
 
@@ -330,15 +329,15 @@ class Lint extends Command
     /**
      * Grabs the surrounding lines around the exception.
      *
-     * @param \Twig\Source  $template Contents of Twig template.
-     * @param string|int    $line     Line where the exception occurred.
-     * @param int           $context  Number of lines around the line where the exception occurred.
+     * @param string     $template Contents of Twig template.
+     * @param string|int $line     Line where the exception occurred.
+     * @param int        $context  Number of lines around the line where the exception occurred.
      *
      * @return array
      */
-    protected function getContext(Source $template, $line, $context = 3)
+    protected function getContext($template, $line, $context = 3)
     {
-        $lines    = explode("\n", $template->getCode());
+        $lines    = explode("\n", $template);
         $position = max(0, $line - $context);
         $max      = min(count($lines), $line - 1 + $context);
 

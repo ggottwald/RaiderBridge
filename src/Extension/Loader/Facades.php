@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace TwigBridge\Extension\Loader;
+namespace RaiderBridge\Extension\Loader;
 
-use Twig\Extension\GlobalsInterface;
-use TwigBridge\Extension\Loader\Facade\Caller;
-use TwigBridge\Twig\Globals;
+use Raider\Extension\GlobalsInterface;
+use RaiderBridge\Extension\Loader\Facade\Caller;
+use RaiderBridge\Twig\Globals;
 
 /**
  * Extension to expose defined facades to the Twig templates.

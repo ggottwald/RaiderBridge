@@ -5,10 +5,10 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace TwigBridge\Extension\Laravel;
+namespace RaiderBridge\Extension\Laravel;
 
-use Twig\Extension\AbstractExtension;
-use TwigBridge\NodeVisitor\GetAttrAdjuster;
+use Raider\Extension\AbstractExtension;
+use RaiderBridge\NodeVisitor\GetAttrAdjuster;
 
 /**
  * Access to Laravel model properties using ArrayAccess.

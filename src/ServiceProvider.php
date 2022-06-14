@@ -9,17 +9,17 @@
  * file that was distributed with this source code.
  */
 
-namespace TwigBridge;
+namespace RaiderBridge;
 
 use Illuminate\View\ViewServiceProvider;
 use InvalidArgumentException;
-use Twig\Lexer;
-use Twig\Extension\DebugExtension;
-use Twig\Extension\ExtensionInterface;
-use Twig\Extension\EscaperExtension;
-use Twig\Loader\ArrayLoader;
-use Twig\Loader\ChainLoader;
-use Twig_Environment;
+use Raider\Lexer;
+use Raider\Extension\DebugExtension;
+use Raider\Extension\ExtensionInterface;
+use Raider\Extension\EscaperExtension;
+use Raider\Loader\ArrayLoader;
+use Raider\Loader\ChainLoader;
+use Raider_Environment;
 
 /**
  * Bootstrap Laravel TwigBridge.
@@ -265,7 +265,7 @@ class ServiceProvider extends ViewServiceProvider
             true
         );
 
-        $this->app->alias('twig', Twig_Environment::class);
+        $this->app->alias('twig', Raider_Environment::class);
         $this->app->alias('twig', Bridge::class);
 
         $this->app->bindIf('twig.compiler', function () {

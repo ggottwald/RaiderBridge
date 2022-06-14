@@ -5,16 +5,16 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace TwigBridge\Node;
+namespace RaiderBridge\Node;
 
-use Twig\Compiler;
-use Twig\Environment;
-use Twig\Error\RuntimeError;
-use Twig\Extension\SandboxExtension;
-use Twig\Node\Expression\GetAttrExpression;
-use Twig\Node\Node;
-use Twig\Source;
-use Twig\Template;
+use Raider\Compiler;
+use Raider\Environment;
+use Raider\Error\RuntimeError;
+use Raider\Extension\SandboxExtension;
+use Raider\Node\Expression\GetAttrExpression;
+use Raider\Node\Node;
+use Raider\Source;
+use Raider\Template;
 
 /**
  * Compile a custom twig_get_attribute node.

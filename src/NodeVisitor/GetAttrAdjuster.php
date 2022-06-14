@@ -5,13 +5,13 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace TwigBridge\NodeVisitor;
+namespace RaiderBridge\NodeVisitor;
 
-use Twig\Environment;
-use Twig\Node\Expression\GetAttrExpression;
-use Twig\Node\Node;
-use Twig\NodeVisitor\NodeVisitorInterface;
-use TwigBridge\Node\GetAttrNode;
+use Raider\Environment;
+use Raider\Node\Expression\GetAttrExpression;
+use Raider\Node\Node;
+use Raider\NodeVisitor\NodeVisitorInterface;
+use RaiderBridge\Node\GetAttrNode;
 
 /**
  * Custom twig_get_attribute node.
@@ -21,7 +21,7 @@ class GetAttrAdjuster implements NodeVisitorInterface
     /**
      * @inheritdoc
      */
-    public function enterNode(Node $node, Environment $env)
+    public function enterNode(\Raider_NodeInterface $node, Environment $env)
     {
         // Make sure this is a GetAttrExpression (and not a subclass)
         if (get_class($node) !== GetAttrExpression::class) {
@@ -51,7 +51,7 @@ class GetAttrAdjuster implements NodeVisitorInterface
     /**
      * @inheritdoc
      */
-    public function leaveNode(Node $node, Environment $env)
+    public function leaveNode(\Raider_NodeInterface $node, Environment $env)
     {
         return $node;
     }

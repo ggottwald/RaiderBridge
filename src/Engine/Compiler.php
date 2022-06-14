@@ -9,14 +9,14 @@
  * file that was distributed with this source code.
  */
 
-namespace TwigBridge\Engine;
+namespace RaiderBridge\Engine;
 
 use Exception;
 use Illuminate\View\Compilers\CompilerInterface;
 use InvalidArgumentException;
-use Twig\Environment;
-use Twig\LoaderError;
-use TwigBridge\Twig\Template;
+use Raider\Environment;
+use Raider\LoaderError;
+use RaiderBridge\Twig\Template;
 
 /**
  * Compiles Twig templates.
@@ -90,7 +90,7 @@ class Compiler implements CompilerInterface
      *
      * @throws \InvalidArgumentException
      *
-     * @return string \TwigBridge\Twig\Template
+     * @return string \RaiderBridge\Twig\Template
      */
     public function load($path)
     {

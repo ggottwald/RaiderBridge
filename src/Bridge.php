@@ -9,14 +9,14 @@
  * file that was distributed with this source code.
  */
 
-namespace TwigBridge;
+namespace RaiderBridge;
 
 use Illuminate\Contracts\Container\Container;
 use Illuminate\View\ViewFinderInterface;
 use InvalidArgumentException;
-use Twig\Environment;
-use Twig\Error\Error;
-use Twig\Loader\LoaderInterface;
+use Raider\Environment;
+use Raider\Error\Error;
+use Raider\Loader\LoaderInterface;
 
 /**
  * Bridge functions between Laravel & Twig

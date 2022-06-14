@@ -1,5 +1,5 @@
 {
-    "name": "rcrowe/twigbridge",
+    "name": "plentymarkets/raiderbridge",
     "description": "Adds the power of Twig to Laravel",
     "keywords": ["laravel", "twig"],
     "license": "MIT",
@@ -15,12 +15,11 @@
     ],
     "require": {
         "php": ">=7.1",
-        "twig/twig": "^2.11",
-        "illuminate/support": "^5.5|^6|^7|^8",
-        "illuminate/view": "^5.5|^6|^7|^8"
+        "twig/raider": "1.x-dev",
+        "illuminate/support": "^6|^7|^8|^9",
+        "illuminate/view": "^6|^7|^8|^9"
     },
     "require-dev": {
-        "ext-json": "*",
         "laravel/framework": "5.5.*",
         "mockery/mockery": "0.9.*",
         "phpunit/phpunit": "~6.0",
@@ -33,20 +32,20 @@
     },
     "autoload": {
         "psr-4": {
-            "TwigBridge\\": "src",
+            "RaiderBridge\\": "src",
             "TwigBridge\\Tests\\": "tests"
         }
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "0.12-dev"
+            "dev-master": "0.11-dev"
         },
         "laravel": {
             "providers": [
-                "TwigBridge\\ServiceProvider"
+                "RaiderBridge\\ServiceProvider"
             ],
             "aliases": {
-                "Twig": "TwigBridge\\Facade\\Twig"
+                "Raider": "RaiderBridge\\Facade\\Twig"
             }
         }
     },
