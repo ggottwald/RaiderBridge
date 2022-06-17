@@ -25,6 +25,6 @@ class Raider extends Facade
      */
     protected static function getFacadeAccessor()
     {
-        return 'twig';
+        return 'raider';
     }
 }

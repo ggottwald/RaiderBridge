@@ -76,7 +76,7 @@ class Facades extends AbstractExtension
         $this->setShortcuts($shortcuts);
 
         // Register Twig callback to handle undefined functions
-        $this->app['twig']->registerUndefinedFunctionCallback(function ($name) {
+        $this->app['raider']->registerUndefinedFunctionCallback(function ($name) {
             // Allow any method on aliased classes
             return $this->getFunction($name);
         });

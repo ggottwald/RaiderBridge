@@ -60,7 +60,7 @@ abstract class Template extends TwigTemplate
 
         $view = new View(
             $env,
-            $env->getEngineResolver()->resolve('twig'),
+            $env->getEngineResolver()->resolve('raider'),
             $viewName,
             null,
             $context

@@ -48,7 +48,7 @@ class Loader implements LoaderInterface
      * @param \Illuminate\View\ViewFinderInterface  $finder
      * @param string                                $extension Twig file extension.
      */
-    public function __construct(Filesystem $files, ViewFinderInterface $finder, $extension = 'twig')
+    public function __construct(Filesystem $files, ViewFinderInterface $finder, $extension = 'raider')
     {
         $this->files     = $files;
         $this->finder    = $finder;

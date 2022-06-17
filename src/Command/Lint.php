@@ -61,7 +61,7 @@ class Lint extends Command
     {
         $finder = (empty($this->finder)) ? Finder::create() : $this->finder;
 
-        return $finder->files()->in($paths)->name('*.'.$this->laravel['twig.extension']);
+        return $finder->files()->in($paths)->name('*.'.$this->laravel['raider.extension']);
     }
 
     /**
@@ -81,7 +81,7 @@ class Lint extends Command
      */
     public function handle()
     {
-        $this->twig = $this->laravel['twig'];
+        $this->twig = $this->laravel['raider'];
         $format     = $this->option('format');
 
         // Check STDIN for the template
@@ -171,7 +171,7 @@ class Lint extends Command
      */
     protected function getContents($file)
     {
-        return $this->laravel['twig.loader']->getSourceContext($file);
+        return $this->laravel['raider.loader']->getSourceContext($file);
     }
 
     /**

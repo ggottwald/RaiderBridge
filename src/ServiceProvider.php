@@ -99,10 +99,10 @@ class ServiceProvider extends ViewServiceProvider
     protected function registerExtension()
     {
         $this->app['view']->addExtension(
-            $this->app['twig.extension'],
-            'twig',
+            $this->app['raider.extension'],
+            'raider',
             function () {
-                return $this->app['twig.engine'];
+                return $this->app['raider.engine'];
             }
         );
     }
@@ -140,11 +140,11 @@ class ServiceProvider extends ViewServiceProvider
      */
     protected function registerOptions()
     {
-        $this->app->bindIf('twig.extension', function () {
+        $this->app->bindIf('raider.extension', function () {
             return $this->app['config']->get('twigbridge.twig.extension');
         });
 
-        $this->app->bindIf('twig.options', function () {
+        $this->app->bindIf('raider.options', function () {
             $options = $this->app['config']->get('twigbridge.twig.environment', []);
 
             // Check whether we have the cache path set
@@ -156,12 +156,12 @@ class ServiceProvider extends ViewServiceProvider
             return $options;
         });
 
-        $this->app->bindIf('twig.extensions', function () {
+        $this->app->bindIf('raider.extensions', function () {
             $load = $this->app['config']->get('twigbridge.extensions.enabled', []);
 
             // Is debug enabled?
             // If so enable debug extension
-            $options = $this->app['twig.options'];
+            $options = $this->app['raider.options'];
             $isDebug = (bool) (isset($options['debug'])) ? $options['debug'] : false;
 
             if ($isDebug) {
@@ -171,7 +171,7 @@ class ServiceProvider extends ViewServiceProvider
             return $load;
         });
 
-        $this->app->bindIf('twig.lexer', function () {
+        $this->app->bindIf('raider.lexer', function () {
             return null;
         });
     }
@@ -184,28 +184,28 @@ class ServiceProvider extends ViewServiceProvider
     protected function registerLoaders()
     {
         // The array used in the ArrayLoader
-        $this->app->bindIf('twig.templates', function () {
+        $this->app->bindIf('raider.templates', function () {
             return [];
         });
 
-        $this->app->bindIf('twig.loader.array', function ($app) {
-            return new ArrayLoader($app['twig.templates']);
+        $this->app->bindIf('raider.loader.array', function ($app) {
+            return new ArrayLoader($app['raider.templates']);
         });
 
-        $this->app->bindIf('twig.loader.viewfinder', function () {
+        $this->app->bindIf('raider.loader.viewfinder', function () {
             return new Twig\Loader(
                 $this->app['files'],
                 $this->app['view']->getFinder(),
-                $this->app['twig.extension']
+                $this->app['raider.extension']
             );
         });
 
         $this->app->bindIf(
-            'twig.loader',
+            'raider.loader',
             function () {
                 return new ChainLoader([
-                    $this->app['twig.loader.array'],
-                    $this->app['twig.loader.viewfinder'],
+                    $this->app['raider.loader.array'],
+                    $this->app['raider.loader.viewfinder'],
                 ]);
             },
             true
@@ -220,13 +220,13 @@ class ServiceProvider extends ViewServiceProvider
     protected function registerEngine()
     {
         $this->app->bindIf(
-            'twig',
+            'raider',
             function () {
-                $extensions = $this->app['twig.extensions'];
-                $lexer = $this->app['twig.lexer'];
+                $extensions = $this->app['raider.extensions'];
+                $lexer = $this->app['raider.lexer'];
                 $twig = new Bridge(
-                    $this->app['twig.loader'],
-                    $this->app['twig.options'],
+                    $this->app['raider.loader'],
+                    $this->app['raider.options'],
                     $this->app
                 );
 
@@ -265,17 +265,17 @@ class ServiceProvider extends ViewServiceProvider
             true
         );
 
-        $this->app->alias('twig', Twig_Environment::class);
-        $this->app->alias('twig', Bridge::class);
+        $this->app->alias('raider', Twig_Environment::class);
+        $this->app->alias('raider', Bridge::class);
 
-        $this->app->bindIf('twig.compiler', function () {
-            return new Engine\Compiler($this->app['twig']);
+        $this->app->bindIf('raider.compiler', function () {
+            return new Engine\Compiler($this->app['raider']);
         });
 
-        $this->app->bindIf('twig.engine', function () {
+        $this->app->bindIf('raider.engine', function () {
             return new Engine\Twig(
-                $this->app['twig.compiler'],
-                $this->app['twig.loader.viewfinder'],
+                $this->app['raider.compiler'],
+                $this->app['raider.loader.viewfinder'],
                 $this->app['config']->get('twigbridge.twig.globals', [])
             );
         });
@@ -304,17 +304,17 @@ class ServiceProvider extends ViewServiceProvider
             'command.twig',
             'command.twig.clean',
             'command.twig.lint',
-            'twig.extension',
-            'twig.options',
-            'twig.extensions',
-            'twig.lexer',
-            'twig.templates',
-            'twig.loader.array',
-            'twig.loader.viewfinder',
-            'twig.loader',
-            'twig',
-            'twig.compiler',
-            'twig.engine',
+            'raider.extension',
+            'raider.options',
+            'raider.extensions',
+            'raider.lexer',
+            'raider.templates',
+            'raider.loader.array',
+            'raider.loader.viewfinder',
+            'raider.loader',
+            'raider',
+            'raider.compiler',
+            'raider.engine',
         ];
     }
 }

@@ -35,7 +35,7 @@ class Clean extends Command
      */
     public function handle()
     {
-        $twig     = $this->laravel['twig'];
+        $twig     = $this->laravel['raider'];
         $files    = $this->laravel['files'];
         $cacheDir = $twig->getCache();
 

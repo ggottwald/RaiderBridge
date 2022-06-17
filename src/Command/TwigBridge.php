@@ -25,7 +25,7 @@ class TwigBridge extends Command
      *
      * @var string
      */
-    protected $name = 'twig';
+    protected $name = 'raider';
 
     /**
      * The console command description.
