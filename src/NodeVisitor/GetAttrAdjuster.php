@@ -21,7 +21,7 @@ class GetAttrAdjuster implements NodeVisitorInterface
     /**
      * @inheritdoc
      */
-    public function enterNode(\Raider_NodeInterface $node, Environment $env)
+    public function enterNode(\Twig_NodeInterface $node, Environment $env)
     {
         // Make sure this is a GetAttrExpression (and not a subclass)
         if (get_class($node) !== GetAttrExpression::class) {
@@ -51,7 +51,7 @@ class GetAttrAdjuster implements NodeVisitorInterface
     /**
      * @inheritdoc
      */
-    public function leaveNode(\Raider_NodeInterface $node, Environment $env)
+    public function leaveNode(\Twig_NodeInterface $node, Environment $env)
     {
         return $node;
     }

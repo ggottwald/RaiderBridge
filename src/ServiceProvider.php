@@ -19,7 +19,7 @@ use Raider\Extension\ExtensionInterface;
 use Raider\Extension\EscaperExtension;
 use Raider\Loader\ArrayLoader;
 use Raider\Loader\ChainLoader;
-use Raider_Environment;
+use Twig_Environment;
 
 /**
  * Bootstrap Laravel TwigBridge.
@@ -265,7 +265,7 @@ class ServiceProvider extends ViewServiceProvider
             true
         );
 
-        $this->app->alias('twig', Raider_Environment::class);
+        $this->app->alias('twig', Twig_Environment::class);
         $this->app->alias('twig', Bridge::class);
 
         $this->app->bindIf('twig.compiler', function () {

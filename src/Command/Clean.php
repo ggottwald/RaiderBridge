@@ -12,7 +12,7 @@
 namespace RaiderBridge\Command;
 
 use Illuminate\Console\Command;
-use Raider_Environment;
+use Twig_Environment;
 use Illuminate\Filesystem\Filesystem;
 
 /**
