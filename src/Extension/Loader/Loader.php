@@ -23,6 +23,8 @@ use Raider\Extension\AbstractExtension;
  */
 abstract class Loader extends AbstractExtension
 {
+    protected $config;
+
     /**
      * Create a new loader extension.
      *
